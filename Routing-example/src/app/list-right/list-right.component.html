@@ -1,4 +1,25 @@
-<div>
-  <h3>Right Content</h3>
-  <p>This is content for the right section.</p>
+<div class="service-details-container">
+  <h2>Service Details</h2>
+
+  <form class="service-details-form" (ngSubmit)="saveService()">
+    <label for="id">Service ID:</label>
+    <input id="id" type="number" [(ngModel)]="ListRightComponent.id" name="id" required placeholder="Enter Service ID" />
+
+    <label for="name">Service Name:</label>
+    <input id="name" type="text" [(ngModel)]="ListRightComponent.name" name="name" required />
+
+    <label for="description">Service Description:</label>
+    <textarea id="description" [(ngModel)]="ListRightComponent.description" name="description" required></textarea>
+
+    <label for="category">Service Category:</label>
+    <input id="category" type="text" [(ngModel)]="ListRightComponent.category" name="category" required />
+
+    <label for="cost">Cost or Price:</label>
+    <input id="cost" type="number" [(ngModel)]="ListRightComponent.cost" name="cost" required />
+
+    <div class="buttons">
+      <button type="submit" class="save-btn">Save</button>
+      <button type="button" class="cancel-btn" (click)="cancelOperation()">Cancel</button>
+    </div>
+  </form>
 </div>

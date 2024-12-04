@@ -1,36 +1,44 @@
 .services-container {
-  text-align: center;
-  padding-top: 100px;
+  padding: 50px;
+  font-family: Arial, sans-serif;
 }
 
-.services-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+h2 {
+  text-align: center;
   margin-bottom: 20px;
-  background: #fffffd;
+}
+
+.services-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form-section {
+  flex: 1;
   padding: 20px;
+  background: #fffffd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .services-form label {
-  width: 100%;
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 .services-form input {
-  width: calc(33.33% - 10px);
+  width: 100%;
   padding: 10px;
-  margin: 5px;
+  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 .add-btn {
   width: 100%;
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #4caf50;
   color: white;
@@ -43,14 +51,17 @@
   opacity: 0.8;
 }
 
-
+.table-section {
+  flex: 2;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .services-table {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: #f9f9f9;
 }
 
 .services-table th, .services-table td {
@@ -61,7 +72,7 @@
 
 .services-table th {
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: #000;
 }
 
 .services-table tr:nth-child(even) {

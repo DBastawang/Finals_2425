@@ -1,45 +1,67 @@
 <div class="services-container">
   <h2>Services</h2>
+  <div class="services-content">
+    <!-- Left Half: Form -->
+    <div class="form-section">
+      <form class="services-form" (ngSubmit)="addService()">
+        <label for="id">Service ID:</label>
+        <input
+          id="id"
+          type="text"
+          [(ngModel)]="newService.id"
+          name="id"
+          required
+          placeholder="Enter Service ID"
+        />
 
-  <form class="services-form" (ngSubmit)="addService()">
-    <label for="id">Service ID:</label>
-    <input id="id" type="text"
-      [(ngModel)]="newService.id"
-      name="id" required placeholder="Enter Service ID"/>
+        <label for="name">Service Name:</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="newService.name"
+          name="name"
+          required
+          placeholder="Enter Service Name"
+        />
 
-    <label for="name">Service Name:</label>
-    <input id="name" type="text"
-      [(ngModel)]="newService.name"name="name"
-      required placeholder="Enter Service Name"/>
+        <label for="description">Service Description:</label>
+        <input
+          id="description"
+          type="text"
+          [(ngModel)]="newService.description"
+          name="description"
+          required
+          placeholder="Enter Service Description"
+        />
 
-    <label for="description">Service Description:</label>
-    <input id="description" type="text"
-      [(ngModel)]="newService.description" name="description"
-      required placeholder="Enter Service Description"/>
+        <button type="submit" class="add-btn">Add Service</button>
+      </form>
+    </div>
 
-    <button type="submit" class="add-btn">Add Service</button>
-  </form>
-
-  <table class="services-table">
-    <thead>
-      <tr>
-        <th>Service ID</th>
-        <th>Service Name</th>
-        <th>Service Description</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let service of services">
-        <td>{{ service.id }}</td>
-        <td>{{ service.name }}</td>
-        <td>{{ service.description }}</td>
-        <td>
-          <button class="view-btn" (click)="viewService(service.id)">View</button>
-          <button class="edit-btn" (click)="editService(service.id)">Edit</button>
-          <button class="delete-btn" (click)="deleteService(service.id)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- Right Half: Services Table -->
+    <div class="table-section">
+      <table class="services-table">
+        <thead>
+          <tr>
+            <th>Service ID</th>
+            <th>Service Name</th>
+            <th>Service Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of services">
+            <td>{{ service.id }}</td>
+            <td>{{ service.name }}</td>
+            <td>{{ service.description }}</td>
+            <td>
+              <button class="view-btn" (click)="viewService(service.id)">View</button>
+              <button class="edit-btn" (click)="editService(service.id)">Edit</button>
+              <button class="delete-btn" (click)="deleteService(service.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
