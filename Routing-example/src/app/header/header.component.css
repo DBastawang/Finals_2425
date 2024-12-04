@@ -1,0 +1,27 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left, .navbar-right {
+  width: 250px;
+}
+
+.navbar-middle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
