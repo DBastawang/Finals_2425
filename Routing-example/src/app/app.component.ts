@@ -11,6 +11,7 @@
   import { RouterLink, RouterLinkActive,RouterModule,RouterOutlet } from '@angular/router';
   import { ReactiveFormsModule } from '@angular/forms';
   import { CommonModule } from '@angular/common';
+  import { Service } from './service';
 
 
   @Component({
@@ -28,5 +29,17 @@
   })
   export class AppComponent {
     title = 'Routing-example';
+  }
+
+  export class ServiceComponent {
+    service: Service[] = [
+      { id: 1, name: 'Haircut', description: 'gupit', price: 100.00 },
+      { id: 2, name: 'Haircolor', description: 'kulay', price: 100.00 }
+    ];
+    selectService: Service | null = null;
+
+    viewServiceDetails(service: Service):any{
+
+    }
   }
 

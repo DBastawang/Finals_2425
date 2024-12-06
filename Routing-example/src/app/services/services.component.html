@@ -5,13 +5,17 @@
     <div class="form-section">
       <form class="services-form" (ngSubmit)="addService()">
         <label for="id">Service ID:</label>
+        <!-- Use number type for IDs -->
+         <!-- yung id is naka automaticly assigned sa line 17-->
         <input
           id="id"
-          type="text"
+          type="number"
           [(ngModel)]="newService.id"
           name="id"
           required
-          placeholder="Enter Service ID"
+
+          [readonly]="true"
+          placeholder="Service ID"
         />
 
         <label for="name">Service Name:</label>
