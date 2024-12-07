@@ -1,0 +1,79 @@
+<form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="First_Name">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="First_Name"
+      name="firstName"
+      placeholder="First Name"
+      [(ngModel)]="user.firstName"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="Middle_Name">Middle Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="Middle_Name"
+      name="middleName"
+      placeholder="Middle Name (Optional)"
+      [(ngModel)]="user.middleName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="Last_Name">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="Last_Name"
+      name="lastName"
+      placeholder="Last Name"
+      [(ngModel)]="user.lastName"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      name="email"
+      placeholder="Enter email"
+      [(ngModel)]="user.email"
+      required
+    />
+    <small id="emailHelp" class="form-text text-muted">
+      We'll never share your email with anyone else.
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      placeholder="Password"
+      [(ngModel)]="user.password"
+      required
+    />
+  </div>
+  <div class="form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="exampleCheck1"
+      name="agreeToTerms"
+      [(ngModel)]="user.agreeToTerms"
+    />
+    <label class="form-check-label" for="exampleCheck1">
+      Agree to terms and conditions
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">
+    Submit
+  </button>
+</form>
