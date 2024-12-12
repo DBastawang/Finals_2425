@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { EditStudentRecordComponent } from '../edit-student-record/edit-student-record.component';
+
 @Component({
   selector: 'app-records-of-class',
-  imports: [NgFor,CommonModule],
+  imports: [CommonModule, EditStudentRecordComponent],
   standalone: true,
   templateUrl: './records-of-class.component.html',
   styleUrls: ['./records-of-class.component.css'],
 })
 export class RecordsOfClassComponent {
   students = [
-    { id: 20210016, name: 'Alice Smith', activity: 'Math Quiz' },
+    { id: 20210016, name: 'Alice Smith', activity: 'Math Quiz', address:" " },
     { id: 20212001, name: 'Bob Johnson', activity: 'Science Project' },
     { id: 20237873, name: 'Charlie Brown', activity: 'History Essay' },
     { id: 20236844, name: 'Diana Prince', activity: 'Art Assignment' },
@@ -54,15 +55,19 @@ export class RecordsOfClassComponent {
     this.currentPage = page;
   }
 
-  viewDetails(student: any) {
-    this.selectedStudent = student;
-  }
-
   editRecord(student: any) {
-    alert(`Edit record for ${student.name}`);
+    this.selectedStudent = { ...student };
   }
 
-  closeModal() {
+  saveUpdatedStudent(updatedStudent: any) {
+    const index = this.students.findIndex((s) => s.id === updatedStudent.id);
+    if (index !== -1) {
+      this.students[index] = updatedStudent;
+    }
+    this.selectedStudent = null;
+  }
+
+  cancelEdit() {
     this.selectedStudent = null;
   }
 }

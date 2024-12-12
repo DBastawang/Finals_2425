@@ -1,0 +1,37 @@
+<div class="edit-form">
+  <h3>Edit Student Record</h3>
+  <form>
+    <div class="mb-3">
+      <label for="studentName" class="form-label">Name</label>
+      <input
+        id="studentName"
+        [(ngModel)]="student.name"
+        name="name"
+        class="form-control"
+        type="text"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="studentActivity" class="form-label">Activity</label>
+      <input
+        id="studentActivity"
+        [(ngModel)]="student.activity"
+        name="activity"
+        class="form-control"
+        type="text"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="studentActivity" class="form-label">Address</label>
+      <input
+        id="studentActivity"
+        [(ngModel)]="student.address"
+        name="activity"
+        class="form-control"
+        type="text"
+      />
+    </div>
+    <button type="button" class="btn btn-success" (click)="saveRecord()">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
